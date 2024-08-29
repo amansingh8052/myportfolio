@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <header>
+          <ul>
+            <li><a class="headerOptions activate" href="#home">Home</a></li>
+            <li><a class="headerOptions" href="#about">About</a></li>
+            <li><a class="headerOptions" href="#skills">Skills</a></li>
+            <li><a class="headerOptions" href="#projects">Projects</a></li>
+            <li><a class="headerOptions" href="#contact">Contact</a></li>
+          </ul>
+        </header>
+        <section id="home">
+          <div class="homecontent">
+            <p class="hiiThere">Hi there, I am</p>
+            <h1 class="name">Aman Singh</h1>
+            <h3>And I'm a <span class="multiple-text"></span></h3>
+            <button class="download">Download CV</button>
+          </div>
+          <div class="homeImg" id="homeImg">
+            <img
+              class="profileImage"
+              src="https://assets.codepen.io/1480814/kevin-p.png"
+              alt="Profile Image"
+              style="--c: #255b98"
+            />
+          </div>
+        </section>
+        <section id="about">
+          <div class="aboutImg">
+            <img
+              class="aboutInnerImg"
+              src="Snapchat-787156755.jpg"
+              alt="About Image"
+            />
+          </div>
+          <div class="aboutContent">
+            <h2>About</h2>
+            <p>
+              I am a passionate web designer and developer with a knack for
+              creating visually appealing and user-friendly websites. My journey
+              in web development began a few years ago, and since then, I have
+              honed my skills in various technologies. I love transforming ideas
+              into digital realities and am always eager to learn and adapt to
+              new trends in the industry. Whether it's designing sleek
+              interfaces or coding robust backends, I strive to deliver
+              high-quality work that exceeds expectations.
+            </p>
+          </div>
+        </section>
+
+        <section id="skills">
+          <h2 class="skillsHead">Skills</h2>
+          <div class="skillCover">
+            <div class="skillContent">
+              <div class="skillImage">
+                <img src="ab.png" alt="Image 1" class="image active" />
+              </div>
+              <h2>Web Designer</h2>
+              <p>
+                As a web designer, I focus on creating responsive and
+                aesthetically pleasing websites that provide a seamless user
+                experience. My designs are clean, modern, and aligned with the
+                latest industry standards. I am proficient in using tools like
+                Adobe XD, Figma, Illustrator and Photoshop to bring ideas to
+                life.
+              </p>
+              <a href="#webDesign" class="projectButton">Projects</a>
+            </div>
+
+            <div class="skillContent">
+              <div class="skillImage">
+                <img src="fe.png" alt="Image 2" class="image" />
+              </div>
+              <h2>Frontend Developer</h2>
+              <p>
+                I specialize in building the front end of web applications using
+                HTML, CSS, and JavaScript. I am experienced with frameworks like
+                React, which help me create dynamic and interactive user
+                interfaces. I also ensure that all my web projects are optimized
+                for performance and accessibility.
+              </p>
+              <a href="#development" class="projectButton">Projects</a>
+            </div>
+
+            <div class="skillContent">
+              <div class="skillImage">
+                <img src="fe.png" alt="Image 3" class="image" />
+              </div>
+              <h2>Graphic Designer</h2>
+              <p>
+                Graphic design is another area where I excel. I have a strong
+                eye for detail and a deep understanding of visual hierarchy,
+                color theory, and typography. I create compelling graphics,
+                logos, and branding materials that resonate with the target
+                audience and leave a lasting impression.
+              </p>
+              <a href="#graphic" class="projectButton">Projects</a>
+            </div>
+          </div>
+        </section>
+
+        <section id="projects">
+          <h2 class="projectHeading">Projects</h2>
+          <div id="webDesign" class="webProjects">
+            <h2 class="title">UI Designs</h2>
+            <div class="projectContainer">
+              <span
+                class="project"
+                onclick="openFullScreenImage('webDesign/skillup.png')"
+                ><img
+                  src="webDesign/skillupThumbnail.png"
+                  alt="SkillUp Project"
+              /></span>
+              <span
+                class="project"
+                onclick="openFullScreenImage('webDesign/anime.png')"
+                ><img src="webDesign/aminethumbnail.png" alt="Anime Project"
+              /></span>
+              <span
+                class="project"
+                onclick="openFullScreenImage('webDesign/gym.png')"
+                ><img src="webDesign/gymthumbnail.png" alt="Gym Project"
+              /></span>
+              <span class="project"></span>
+            </div>
+          </div>
+          <div id="development" class="webProjects">
+            <h2 class="title">Frontend Development</h2>
+            <div class="projectContainer">
+              <a
+                href="https://amansingh8052.github.io/skillsup/"
+                class="project"
+                ><img
+                  src="webDesign/skillupThumbnail.png"
+                  alt="SkillUp Project"
+              /></a>
+              <a
+                href="https://amansingh8052.github.io/vitafitx/"
+                class="project"
+                ><img src="webDesign/gymthumbnail.png" alt="VITAfitsX Project"
+              /></a>
+              <a class="project"></a>
+            </div>
+          </div>
+          <div id="graphic" class="webProjects">
+            <h2 class="title">Graphic/Logo Designs</h2>
+            <div class="projectContainer">
+              <span
+                class="project"
+                onclick="openFullScreenImage('graphicDesign/wildwonder.png')"
+                ><img
+                  src="graphicDesign/wildwonder.png"
+                  alt="Wild Wonder Project"
+              /></span>
+              <span
+                class="project"
+                onclick="openFullScreenImage('graphicDesign/vitafitx.png')"
+                ><img src="graphicDesign/vitafitx.png" alt="VITAfitsX Project"
+              /></span>
+              <span
+                class="project"
+                onclick="openFullScreenImage('graphicDesign/F3.jpg')"
+                ><img src="graphicDesign/F3.jpg" alt="F3 Project"
+              /></span>
+              <span class="project"></span>
+            </div>
+          </div>
+          <div id="fullScreenImage" class="modal">
+            <span
+              class="close"
+              tooltip="Exit Full Screen"
+              onclick="closeFullScreenImage()"
+              >&times;</span
+            >
+            <img class="modal-content" id="fullImage" />
+          </div>
+        </section>
+        <section id="contact">
+          <h2>Contact Me</h2>
+          <div class="contactCover">
+            <div class="contactForm">
+              <form action="mailto:singhaman8796@gmail.com" method="post" enctype="text/plain">
+                <div class="inputContainer">
+                  <input type="text" required name="YourName" />
+                  <label for="">Full Name</label>
+                </div>
+                <div class="inputContainer">
+                  <input type="email" name="YourEmail" required />
+                  <label for="">Email</label>
+                </div>
+                <div class="inputContainer">
+                  <input type="tel" required name="YourMobno." />
+                  <label for="">Mobile Number</label>
+                </div>
+                <textarea
+                  name="message"
+                  id="message"
+                  cols="50"
+                  rows="10"
+                  placeholder="Your Message"
+                  required
+                ></textarea>
+                <button class="submit" type="submit">Send Your Message</button>
+              </form>
+            </div>
+            <div class="socialMedia">
+              <div class="socials">
+                <h2 class="hoverMe">Hover Me</h2>
+                <a
+                  href="https://github.com/amansingh8052"
+                  class="socialIcon icons11"
+                  ><i class="icons1 fa-brands fa-github"></i
+                ></a>
+                <a
+                  href="https://www.linkedin.com/in/aman-singh-882749256/"
+                  class="socialIcon icons21"
+                  ><i class="icons2 fa-brands fa-linkedin"></i
+                ></a>
+                <a
+                  href="https://dribbble.com/Amansingh8052"
+                  class="socialIcon icons31"
+                  ><i class="icons3 fa-brands fa-dribbble"></i
+                ></a>
+                <a
+                  href="https://www.instagram.com/aman_singh_8052/"
+                  class="socialIcon icons51"
+                  ><i class="icons5 fa-brands fa-instagram"></i
+                ></a>
+              
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script src="script.js"></script>
+    <script
+      src="https://kit.fontawesome.com/8f218c5ee4.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
