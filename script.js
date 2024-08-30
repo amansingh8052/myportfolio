@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function openFullScreenImage(imageSrc) {
     const modal = document.getElementById("fullScreenImage");
     const modalImg = document.getElementById("fullImage");
-    modal.style.display = "block";
+    modal.style.display = "flex";
     modalImg.src = imageSrc;
 }
 
@@ -106,11 +106,11 @@ timeline.fromTo(".aboutImg",
 .to(".aboutContent", 
     { 
         opacity: 1, 
-        transform: "translateX(0) skewX(10deg)", 
+        transform: "translateX(0)", 
         duration: 1, 
         ease: "power2.out" 
     }, 
-    "-=0.5" // Start this animation slightly before the previous one ends
+    "-=0.5" 
 );
 
 // gsap.from('.aboutContent', {
@@ -127,14 +127,14 @@ timeline.fromTo(".aboutImg",
 // });
 
 gsap.from('.skillCover', {
-    y: 500,
-    duration: 10,
+    x: 500,
+    duration: 2,
     scrollTrigger: {
         trigger: '#skills', 
         start: 'top 70%',            
         end: 'bottom bottom',         
         toggleActions: 'play none none none',
-        scrub : 2,
+        // scrub : 2,
         // markers: true
     }
 });
