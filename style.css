@@ -14,7 +14,7 @@
   --main-color: #0bc9cd;
 }
 body {
-  background-image: url("/permanent.jpg");
+  background-image: url("../permanent.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
