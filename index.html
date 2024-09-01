@@ -22,13 +22,14 @@
           <div class="homecontent">
             <p class="hiiThere">Hi there, I am</p>
             <h1 class="name">Aman Singh</h1>
-            <h3>And I'm a <span class="multiple-text"></span></h3>
+            <h3 class="multi">And I'm a <span class="multiple-text"></span></h3>
             <button class="download">Download CV</button>
+            <!-- <button class="download">Download CV</button> -->
           </div>
           <div class="homeImg" id="homeImg">
             <img
               class="profileImage"
-              src="https://assets.codepen.io/1480814/kevin-p.png"
+              src="profile.png"
               alt="Profile Image"
               style="--c: #255b98"
             />
@@ -36,14 +37,10 @@
         </section>
         <section id="about">
           <div class="aboutImg">
-            <img
-              class="aboutInnerImg"
-              src="Snapchat-787156755.jpg"
-              alt="About Image"
-            />
+            <img class="aboutInnerImg" src="profile.png" alt="About Image" />
           </div>
           <div class="aboutContent">
-            <h2>About</h2>
+            <h2>About me</h2>
             <p>
               I am a passionate web designer and developer with a knack for
               creating visually appealing and user-friendly websites. My journey
@@ -130,7 +127,6 @@
                 onclick="openFullScreenImage('webDesign/gym.png')"
                 ><img src="webDesign/gymthumbnail.png" alt="Gym Project"
               /></span>
-              <span class="project"></span>
             </div>
           </div>
           <div id="development" class="webProjects">
@@ -143,12 +139,18 @@
                   src="webDesign/skillupThumbnail.png"
                   alt="SkillUp Project"
               /></a>
+
+              <a
+                href="https://amansingh8052.github.io/nursery/"
+                class="project"
+              >
+                <img src="frontend/garden.png" alt="nursery"
+              /></a>
               <a
                 href="https://amansingh8052.github.io/vitafitx/"
                 class="project"
                 ><img src="webDesign/gymthumbnail.png" alt="VITAfitsX Project"
               /></a>
-              <a class="project"></a>
             </div>
           </div>
           <div id="graphic" class="webProjects">
@@ -171,7 +173,6 @@
                 onclick="openFullScreenImage('graphicDesign/F3.jpg')"
                 ><img src="graphicDesign/F3.jpg" alt="F3 Project"
               /></span>
-              <span class="project"></span>
             </div>
           </div>
           <div id="fullScreenImage" class="modal">
@@ -188,7 +189,11 @@
           <h2 class="sectionTitle">Contact Me</h2>
           <div class="contactCover">
             <div class="contactForm">
-              <form action="mailto:singhaman8796@gmail.com" method="post" enctype="text/plain">
+              <form
+                action="mailto:singhaman8796@gmail.com"
+                method="post"
+                enctype="text/plain"
+              >
                 <div class="inputContainer">
                   <input type="text" required name="YourName" />
                   <label for="">Full Name</label>
@@ -235,7 +240,6 @@
                   class="socialIcon icons51"
                   ><i class="icons5 fa-brands fa-instagram"></i
                 ></a>
-              
               </div>
             </div>
           </div>
