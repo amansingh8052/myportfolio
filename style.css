@@ -55,10 +55,10 @@ h3 {
 button {
   padding: 10px 15px;
   letter-spacing: 2px;
-  background-color: var(--main-color);
-  color: var(--primary-color);
+  background-color: transparent;
+  color: var(--main-color);
   border-radius: 30px;
-  border: none;
+  border: 2px solid var(--main-color);
   margin-top: 20px;
 }
 header {
@@ -314,22 +314,29 @@ header ul li {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  width: 400px;
-  height: 500px;
+  /* width: 400px;
+  height: 500px; */
+  width: 320px;
+  height: 400px;
   flex-shrink: 0;
   border-radius: 5px;
   position: relative;
-  padding: 20px;
+  padding: 10px;
   transition: all 0.3s ease-in-out;
 }
 .skillContent:hover {
   box-shadow: 0 2px 4px rgb(220, 220, 220);
   transform: translateY(-10px);
 }
-
-.skillContent h2 {
-  margin: 30px 0 10px 0;
+.skillContent p {
+  font-size: 14px;
 }
+.skillContent h3 {
+  margin: 15px 0 5px 0;
+}
+/* .skillContent h2 {
+  margin: 30px 0 10px 0;
+} */
 .skillImage {
   width: 100%;
   height: 50%;
@@ -345,13 +352,14 @@ header ul li {
 }
 .projectButton {
   text-decoration: none;
-  color: white;
+  color: var(--main-color);
   margin-top: 20px;
   width: 100%;
   padding: 10px 10px;
-  background-color: var(--main-color);
+  background-color: transparent;
   border-radius: 5px;
   display: flex;
+  border: 2px solid var(--main-color);
   align-items: center;
   justify-content: center;
 }
@@ -611,6 +619,9 @@ form textarea:active {
 .socialIcon i {
   font-size: 40px;
 }
+.icons11 {
+  color: var(--primary-color);
+}
 .icons11:hover {
   background-color: var(--primary-color);
 }
@@ -675,7 +686,7 @@ footer {
   .homeImg {
     width: 50vw;
     height: 55vw;
-    margin-top: 100px;
+    margin-top: 50px;
   }
   .homecontent {
     width: 100%;
@@ -695,17 +706,6 @@ footer {
     padding: 10px;
     font-size: 14px;
   }
-  .skillContent {
-    width: 320px;
-    height: 400px;
-    padding: 10px;
-  }
-  .skillContent p {
-    font-size: 14px;
-  }
-  .skillContent h2 {
-    margin: 15px 0 5px 0;
-  }
   .webProjects {
     margin-bottom: 15px;
   }
@@ -724,7 +724,7 @@ footer {
   }
   .socials {
     margin: 60px 0;
-    background-color: transparent;
+    background-color: var(--second-color);
     transform: rotate(0deg);
   }
   .socialIcon {
