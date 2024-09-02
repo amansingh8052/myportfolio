@@ -14,7 +14,7 @@
   --main-color: #0bc9cd;
 }
 body {
-  background-image: url("/permanent.jpg");
+  background-image: url("permanent.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -82,6 +82,9 @@ header ul {
 header ul li {
   text-decoration: none;
   list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .headerOptions {
   text-decoration: none;
@@ -677,6 +680,10 @@ footer {
   .homecontent {
     width: 100%;
   }
+  .download {
+    padding: 0.8em 1.4em;
+    font-size: 14px;
+}
   #about {
     flex-direction: column;
   }
@@ -684,7 +691,7 @@ footer {
     display: none;
   }
   .aboutContent {
-    width: 90%;
+    width: 100%;
     padding: 10px;
     font-size: 14px;
   }
