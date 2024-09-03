@@ -122,7 +122,7 @@ timeline
 
 gsap.from(".skillCover", {
   x: 500,
-  duration: 2,
+  duration: 1.5,
   scrollTrigger: {
     trigger: "#skills",
     start: "top 70%",

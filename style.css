@@ -326,7 +326,8 @@ header ul li {
 }
 .skillContent:hover {
   box-shadow: 0 2px 4px rgb(220, 220, 220);
-  transform: translateY(-10px);
+  transform: scale(1.05);
+  /* transform: translateY(-10px); */
 }
 .skillContent p {
   font-size: 14px;
