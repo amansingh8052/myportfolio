@@ -230,7 +230,7 @@ header ul li {
   overflow: hidden;
 }
 .aboutImg {
-  background-color: var(--main-color);
+  /* background-color: var(--main-color); */
   width: 18vw;
   height: 25vw;
   position: relative;
