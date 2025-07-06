@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects | Aman Singh | Designer & Developer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+   
+</head>
+<body>
+    
+     <!-- Portfolio Section -->
+    <section id="portfolio">
+      <div class="container">
+        <div class="section-title">
+          <h2>My Work</h2>
+        </div>
+        <div class="portfolio-filter">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="design">UI Design</button>
+          <button class="filter-btn" data-filter="development">Development</button>
+          <button class="filter-btn" data-filter="graphic">Graphic</button>
+        </div>
+        <div class="portfolio-grid">
+          <!-- Portfolio Item 1 -->
+          <div class="portfolio-item" data-category="design">
+            <img src="webDesign/portfolio.jpeg" alt="Portfolio Design" class="portfolio-img">
+            <div class="portfolio-overlay">
+              <h3>Portfolio UI Design</h3>
+              <p>Modern portfolio design with clean aesthetics</p>
+              <a href="webDesign/portfolio.jpeg" class="portfolio-link" target="_blank"><i class="fas fa-expand"></i></a>
+            </div>
+          </div>
+
+           
+          <!-- Portfolio Item 1 -->
+          <div class="portfolio-item" data-category="design">
+            <img src="webDesign/aminethumbnail.png" alt="Portfolio Design" class="portfolio-img">
+            <div class="portfolio-overlay">
+              <h3>Anime website UI Design</h3>
+              <p>Modern Anime website design with clean aesthetics</p>
+              <a href="webDesign/anime.png" class="portfolio-link" target="_blank"><i class="fas fa-expand"></i></a>
+            </div>
+          </div>
+          
+          <!-- Portfolio Item 2 -->
+          <div class="portfolio-item" data-category="design">
+            <img src="webDesign/skillupThumbnail.png" alt="SkillUp Design" class="portfolio-img">
+            <div class="portfolio-overlay">
+              <h3>E-Learning Platform</h3>
+              <p>UI design for an online learning platform</p>
+              <a href="webDesign/skillup.png" class="portfolio-link" target="_blank"><i class="fas fa-expand"></i></a>
+            </div>
+          </div>
+          
+          <!-- Portfolio Item 3 -->
+          <div class="portfolio-item" data-category="development">
+            <img src="webDesign/portFolioThumbnail.png" alt="Portfolio Website" class="portfolio-img">
+            <div class="portfolio-overlay">
+              <h3>Portfolio Website</h3>
+              <p>Fully responsive personal portfolio</p>
+              <a href="https://amansingh8052.github.io/portfolioCode/" class="portfolio-link" target="_blank"><i class="fas fa-link"></i></a>
+            </div>
+          </div>
+          
+          <!-- Portfolio Item 4 -->
+          <div class="portfolio-item" data-category="development">
+            <img src="frontend/infinite.png" alt="Infinite Odyssey" class="portfolio-img">
+            <div class="portfolio-overlay">
+              <h3>Infinite Odyssey</h3>
+              <p>Interactive storytelling platform</p>
+              <a href="https://67075b28cd8b3565ea573f94--infiniteodyssey.netlify.app/" class="portfolio-link" target="_blank"><i class="fas fa-link"></i></a>
+            </div>
+          </div>
+          
+          <!-- Portfolio Item 5 -->
+          <div class="portfolio-item" data-category="graphic">
+            <img src="graphicDesign/vitafitx.png" alt="vitafitx Logo" class="portfolio-img">
+            <div class="portfolio-overlay">
+              <h3>vitafitx Logo</h3>
+              <p>Brand identity for gym</p>
+              <a href="graphicDesign/vitafitx.png" class="portfolio-link" target="_blank"><i class="fas fa-expand"></i></a>
+            </div>
+          </div>
+
+          <!-- Portfolio Item 5 -->
+          <div class="portfolio-item" data-category="graphic">
+            <img src="graphicDesign/wealthwave_logo.png" alt="WealthWave Logo" class="portfolio-img">
+            <div class="portfolio-overlay">
+              <h3>WealthWave Logo</h3>
+              <p>Brand identity for financial services</p>
+              <a href="graphicDesign/wealthwave_logo.png" class="portfolio-link" target="_blank"><i class="fas fa-expand"></i></a>
+            </div>
+          </div>
+          
+          <!-- Portfolio Item 6 -->
+          <div class="portfolio-item" data-category="graphic">
+            <img src="graphicDesign/wildwonder.png" alt="Wild Wonder Logo" class="portfolio-img">
+            <div class="portfolio-overlay">
+              <h3>Wild Wonder Logo</h3>
+              <p>Branding for wildlife conservation</p>
+              <a href="graphicDesign/wildwonder.png" class="portfolio-link" target="_blank"><i class="fas fa-expand"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="viewAllBtnContainer">
+        <a href="index.html" class="btn-outline btn">Back <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </section>
+
+     <!-- Scripts -->
+     <script src="script.js"></script>
+     <script>
+  // Portfolio Filter Functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+    
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', function() {
+        // Remove active class from all buttons
+        filterBtns.forEach(btn => btn.classList.remove('active'));
+        
+        // Add active class to clicked button
+        this.classList.add('active');
+        
+        const filter = this.dataset.filter;
+        
+        // Filter items
+        portfolioItems.forEach(item => {
+          if (filter === 'all' || item.dataset.category === filter) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+  });
+</script>
+</body>
+</html>

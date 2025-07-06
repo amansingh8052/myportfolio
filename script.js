@@ -1,186 +1,124 @@
-const typed = new Typed(".multiple-text", {
-  strings: ["UI/UX Designer", "Frontend Developer", "Graphic Designer"],
-  typeSpeed: 100,
-  backSpeed: 100,
+// Typed.js Initialization
+const typed = new Typed('.multiple-text', {
+  strings: ['UI/UX Designer', 'Frontend Developer', 'Graphic Designer'],
+  typeSpeed: 60,
+  backSpeed: 40,
   backDelay: 1000,
-  loop: true,
+  loop: true
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-  const sections = document.querySelectorAll("section");
-  const navLinks = document.querySelectorAll(".headerOptions");
+// Navigation and Hamburger Menu Functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const header = document.querySelector('header');
+  const headerHeight = header.offsetHeight;
+  const hamburger = document.querySelector('.hamburger');
+  const mobileMenu = document.querySelector('.nav-links');
 
-  function activateLink() {
-    let currentSection = sections[0];
-
-    sections.forEach((section) => {
-      const sectionTop = section.offsetTop - 60; // Adjust for header height
-      if (window.scrollY >= sectionTop) {
-        currentSection = section;
+  // Function to update active link
+  function updateActiveLink() {
+    let currentSection = '';
+    
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - headerHeight - 20;
+      const sectionHeight = section.offsetHeight;
+      
+      if (window.scrollY >= sectionTop && 
+          window.scrollY < sectionTop + sectionHeight) {
+        currentSection = section.getAttribute('id');
       }
     });
-
-    navLinks.forEach((link) => {
-      link.classList.remove("activate");
-      if (link.getAttribute("href").substring(1) === currentSection.id) {
-        link.classList.add("activate");
+    
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${currentSection}`) {
+        link.classList.add('active');
       }
     });
   }
 
-  // Initial call to set the active link
-  activateLink();
+  // Toggle mobile menu
+  hamburger.addEventListener('click', function() {
+    mobileMenu.classList.toggle('active');
+    this.innerHTML = mobileMenu.classList.contains('active') 
+      ? '<i class="fas fa-times"></i>' 
+      : '<i class="fas fa-bars"></i>';
+  });
 
-  // Update active link on scroll
-  window.addEventListener("scroll", activateLink);
-
-  // Add click event listeners to nav links
-  navLinks.forEach((link) => {
-    link.addEventListener("click", function () {
-      navLinks.forEach((link) => link.classList.remove("activate"));
-      this.classList.add("activate");
+  // Close mobile menu when clicking a link
+  navLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      // Remove active class from all links
+      navLinks.forEach(lnk => lnk.classList.remove('active'));
+      
+      // Add active class to clicked link
+      this.classList.add('active');
+      
+      // Get the target section
+      const targetId = this.getAttribute('href');
+      const targetSection = document.querySelector(targetId);
+      
+      if (targetSection) {
+        window.scrollTo({
+          top: targetSection.offsetTop - headerHeight,
+          behavior: 'smooth'
+        });
+      }
+      
+      // Close mobile menu if open
+      if (mobileMenu.classList.contains('active')) {
+        mobileMenu.classList.remove('active');
+        hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+      }
     });
   });
-});
 
+  // Set active link on scroll
+  window.addEventListener('scroll', updateActiveLink);
+  
+  // Initialize active link on page load
+  updateActiveLink();
+});
+      // Portfolio Filter
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const portfolioItems = document.querySelectorAll('.portfolio-item');
+      
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          // Update active button
+          filterBtns.forEach(btn => btn.classList.remove('active'));
+          btn.classList.add('active');
+          
+          const filter = btn.dataset.filter;
+          
+          // Filter items
+          portfolioItems.forEach(item => {
+            if (filter === 'all' || item.dataset.category === filter) {
+              item.style.display = 'block';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      });
 
-    document.querySelector('.download').addEventListener('click', function() {
-        const link = document.createElement('a');
-        link.href = 'Resume.pdf';
-        link.download = 'AmanSinghCV.pdf';
-        link.click();
-    });
-
-
-function openFullScreenImage(imageSrc) {
-  const modal = document.getElementById("fullScreenImage");
-  const modalImg = document.getElementById("fullImage");
-  modal.style.display = "flex";
-  modalImg.src = imageSrc;
-}
-
-function closeFullScreenImage() {
-  const modal = document.getElementById("fullScreenImage");
-  modal.style.display = "none";
-}
-
-//animation
-gsap.registerPlugin(ScrollTrigger);
-gsap.from(".name , .multi" , {
-  x: -200,
-  opacity: 0,
-  duration: 1,
-});
-
-gsap.from(".hiiThere", {
-  y: -50,
-  opacity: 0,
-  duration: 1,
-});
-gsap.from(".homeImg", {
-  x: 50,
-  duration: 1,
-  opacity: 0,
-});
-gsap.from(".download", {
-    y: 50,
-    opacity: 0,
-    duration: 1,
-  });
-const timeline = gsap.timeline({
-  scrollTrigger: {
-    trigger: "#about",
-    start: "top 80%", // Trigger when the top of the section is 80% from the top of the viewport
-    end: "bottom 60%",
-    toggleActions: "play none none none",
-    // markers:true
-  },
-});
-
-// Step 1: Animate the height of the image
-timeline
-  .fromTo(
-    ".aboutImg",
-    { height: 0 },
-    {
-      height: "25vw",
-      duration: 1,
-      // ease: "power1.ease"
-    }
-  )
-  // Step 2: Text emerges after the image expands
-  .to(
-    ".aboutContent",
-    {
-      opacity: 1,
-      transform: "translateX(0)",
-      duration: 1,
-      // ease: "power2.out"
-    },
-    "-=0.5"
-  );
-
-gsap.from(".skillCover", {
-  x: 500,
-  duration: 1.5,
-  scrollTrigger: {
-    trigger: "#skills",
-    start: "top 70%",
-    end: "bottom bottom",
-    toggleActions: "play none none none",
-    // scrub : 2,
-    // markers: true
-  },
-});
-gsap.from(".title", {
-  x: -100,
-  Opacity: 0,
-  duration: 1,
-  scrollTrigger: {
-    trigger: ".title",
-    start: "top 60%",
-    end: "bottom 10%",
-    toggleActions: "play none none none",
-    // scrub : 1,
-    // markers: true
-  },
-});
-gsap.from(".projectContainer", {
-  x: 100,
-  Opacity: 0,
-  duration: 1,
-  scrollTrigger: {
-    trigger: ".projectContainer",
-    start: "top 60%",
-    end: "bottom 10%",
-    toggleActions: "play none none none",
-    // scrub : 1,
-    // markers: true
-  },
-});
-gsap.from(".contactForm", {
-  y: 200,
-  Opacity: 0,
-  duration: 1,
-  scrollTrigger: {
-    trigger: ".contactCover",
-    start: "top 60%",
-    end: "top 90%",
-    toggleActions: "play none none none",
-    // scrub : 1,
-    // markers: true
-  },
-});
-gsap.from(".socialMedia", {
-  y: -200,
-  Opacity: 0,
-  duration: 1,
-  scrollTrigger: {
-    trigger: ".contactCover",
-    start: "top 60%",
-    end: "top 90%",
-    toggleActions: "play none none none",
-    // scrub : 1,
-    // markers: true
-  },
-});
+      // Animation on scroll
+      const fadeElements = document.querySelectorAll('.fade-in');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = 1;
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, {
+        threshold: 0.1
+      });
+      
+      fadeElements.forEach(el => {
+        observer.observe(el);
+      });
